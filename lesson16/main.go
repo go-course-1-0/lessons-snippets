@@ -131,4 +131,49 @@ func main() {
 	}
 
 	fmt.Println(experiment, *(*experiment["first"])[0])
+
+	experiment2 := map[int]map[string][]bool{}
+	fmt.Printf("%T\t%v\n", experiment2, experiment2)
+
+	experiment2[100] = map[string][]bool{
+		"First": []bool{
+			false,
+			false,
+			true,
+		},
+		"Second": {
+			true,
+			true,
+			true,
+			true,
+			true,
+		},
+	}
+
+	experiment2[1000] = map[string][]bool{
+		"Winter": []bool{
+			true,
+		},
+		"Summer": {
+			false,
+			false,
+		},
+		"Spring": []bool{
+			true,
+			false,
+			true,
+		},
+		"Fall": {
+			false,
+			false,
+			true,
+			false,
+		},
+	}
+
+	fmt.Println(experiment2)
+
+	s, _ = json.MarshalIndent(experiment2, "", "\t")
+	fmt.Println(string(s))
+
 }
