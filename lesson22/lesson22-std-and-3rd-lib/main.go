@@ -10,6 +10,8 @@ import (
 	"os"
 	"slices"
 	"strings"
+
+	"github.com/fatih/color"
 )
 
 // fmt, math, strings, slices, errors, slog, json
@@ -116,6 +118,14 @@ func main() {
 
 	s, _ = json.MarshalIndent(lr, "", "\t")
 	fmt.Println(string(s))
+
+	color.Red("Error Message")
+	color.Green("Retro...")
+	color.Blue("Color is cool!")
+	customBg :=
+		color.New(color.FgBlue).Add(
+			color.BgWhite).Add(color.Italic)
+	customBg.Println("How does this look like?")
 }
 
 type lRecord struct {
