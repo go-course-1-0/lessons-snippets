@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40f73a44-06e4-45af-8c23-e3bf625d688d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3199c514-dea3-49be-ba03-1c25b778e42f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3199c514-dea3-49be-ba03-1c25b778e42f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad9d350d-28bd-4265-995d-d2f6b46e1b76.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ad9d350d-28bd-4265-995d-d2f6b46e1b76.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad9d350d-28bd-4265-995d-d2f6b46e1b76/storage_v2/_src_/database/itrun_lectures.lGpJjw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ad9d350d-28bd-4265-995d-d2f6b46e1b76/storage_v2/_src_/database/itrun_lectures.lGpJjw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson29/modifying-data-2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/lesson29/modifying-data-2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson29/modifying-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/lesson29/modifying-data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/rmdn/go/src/itrun-lectures/lesson29",
+    "last_opened_file_path": "/home/rmdn/go/src/itrun-lectures",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)"
   },
