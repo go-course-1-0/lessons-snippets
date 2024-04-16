@@ -45,7 +45,7 @@ from country where country_id in (44,23,103);
 select *
 from city;
 
-select country_id, count(*)
+select country_id as country, count(*) as number_of_citites
 from city
 group by country_id;
 
