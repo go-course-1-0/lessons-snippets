@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>2781801</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2781902</IntrospectionStateNumber>
       <ServerVersion>15.6</ServerVersion>
-      <StartupTime>1713446436</StartupTime>
+      <StartupTime>1713617653</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -298,9 +298,9 @@ false Asia/Dili
 false Asia/Dubai
 false Asia/Dushanbe
 true Asia/Famagusta
-false Asia/Gaza
+true Asia/Gaza
 false Asia/Harbin
-false Asia/Hebron
+true Asia/Hebron
 false Asia/Ho_Chi_Minh
 false Asia/Hong_Kong
 false Asia/Hovd
@@ -1053,9 +1053,9 @@ false posix/Asia/Dili
 false posix/Asia/Dubai
 false posix/Asia/Dushanbe
 true posix/Asia/Famagusta
-false posix/Asia/Gaza
+true posix/Asia/Gaza
 false posix/Asia/Harbin
-false posix/Asia/Hebron
+true posix/Asia/Hebron
 false posix/Asia/Ho_Chi_Minh
 false posix/Asia/Hong_Kong
 false posix/Asia/Hovd
@@ -1427,7 +1427,7 @@ true posixrules
 13226||10|C|G
 13226||-9223372036854775808|U|G
 13226||10|U|G</Grants>
-      <IntrospectionStateNumber>2781801</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2781902</IntrospectionStateNumber>
       <ObjectId>177529</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4873,9 +4873,9 @@ true posixrules
     <schema id="276" parent="9" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2781801</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2024-04-18.19:20:26.014</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-04-18.14:20:26</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>2781902</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2024-04-20.19:30:18.368</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-04-20.14:30:18</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>517</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4883,7 +4883,7 @@ true posixrules
     <sequence id="277" parent="276" name="courses_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>177929</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1(6)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>2781800</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4891,7 +4891,7 @@ true posixrules
     <sequence id="278" parent="276" name="students_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>177545</ObjectId>
-      <SequenceIdentity>1(32)</SequenceIdentity>
+      <SequenceIdentity>1(44)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>2781511</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4912,13 +4912,13 @@ true posixrules
     </table>
     <table id="281" parent="276" name="students">
       <ObjectId>177546</ObjectId>
-      <StateNumber>2781750</StateNumber>
+      <StateNumber>2781856</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="282" parent="276" name="teachers">
       <ObjectId>177906</ObjectId>
-      <StateNumber>2781795</StateNumber>
+      <StateNumber>2781877</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4969,14 +4969,7 @@ true posixrules
       <StateNumber>2781800</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <foreign-key id="290" parent="280" name="courses_teacher_id_fk">
-      <ColNames>teacher_id</ColNames>
-      <ObjectId>177938</ObjectId>
-      <StateNumber>2781800</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>177906</RefTableId>
-    </foreign-key>
-    <index id="291" parent="280" name="courses_pkey">
+    <index id="290" parent="280" name="courses_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>177936</ObjectId>
@@ -4985,13 +4978,19 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="292" parent="280" name="courses_pkey">
+    <key id="291" parent="280" name="courses_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>177937</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2781800</StateNumber>
       <UnderlyingIndexId>177936</UnderlyingIndexId>
     </key>
+    <check id="292" parent="281" name="check_age">
+      <ColNames>date_of_birth</ColNames>
+      <ObjectId>177985</ObjectId>
+      <Predicate>((date_part(&apos;year&apos;::text, now()) - date_part(&apos;year&apos;::text, date_of_birth)) &gt;= (16)::double precision) AND (date_part(&apos;year&apos;::text, date_of_birth) &gt;= (1900)::double precision)</Predicate>
+      <StateNumber>2781856</StateNumber>
+    </check>
     <column id="293" parent="281" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;students_id_seq&apos;::regclass)</DefaultExpression>
@@ -5078,14 +5077,194 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="305" parent="281" name="students_pkey">
+    <index id="305" parent="281" name="students_phone_key">
+      <ColNames>phone</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177974</ObjectId>
+      <StateNumber>2781840</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="306" parent="281" name="students_phone_key1">
+      <ColNames>phone</ColNames>
+      <ObjectId>177993</ObjectId>
+      <StateNumber>2781889</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="307" parent="281" name="students_phone_key2">
+      <ColNames>phone</ColNames>
+      <ObjectId>177997</ObjectId>
+      <StateNumber>2781891</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="308" parent="281" name="students_phone_key3">
+      <ColNames>phone</ColNames>
+      <ObjectId>178001</ObjectId>
+      <StateNumber>2781893</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="309" parent="281" name="students_phone_key4">
+      <ColNames>phone</ColNames>
+      <ObjectId>178005</ObjectId>
+      <StateNumber>2781895</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="310" parent="281" name="students_email_key">
+      <ColNames>email</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177976</ObjectId>
+      <StateNumber>2781840</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="311" parent="281" name="students_email_key1">
+      <ColNames>email</ColNames>
+      <ObjectId>177995</ObjectId>
+      <StateNumber>2781889</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="312" parent="281" name="students_email_key2">
+      <ColNames>email</ColNames>
+      <ObjectId>177999</ObjectId>
+      <StateNumber>2781891</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="313" parent="281" name="students_email_key3">
+      <ColNames>email</ColNames>
+      <ObjectId>178003</ObjectId>
+      <StateNumber>2781893</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="314" parent="281" name="students_email_key4">
+      <ColNames>email</ColNames>
+      <ObjectId>178007</ObjectId>
+      <StateNumber>2781895</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="315" parent="281" name="students_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>177556</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2781511</StateNumber>
       <UnderlyingIndexId>177555</UnderlyingIndexId>
     </key>
-    <column id="306" parent="282" name="id">
+    <key id="316" parent="281" name="students_phone_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177975</ObjectId>
+      <StateNumber>2781840</StateNumber>
+      <UnderlyingIndexId>177974</UnderlyingIndexId>
+    </key>
+    <key id="317" parent="281" name="students_phone_key1">
+      <ObjectId>177994</ObjectId>
+      <StateNumber>2781889</StateNumber>
+      <UnderlyingIndexId>177993</UnderlyingIndexId>
+    </key>
+    <key id="318" parent="281" name="students_phone_key2">
+      <ObjectId>177998</ObjectId>
+      <StateNumber>2781891</StateNumber>
+      <UnderlyingIndexId>177997</UnderlyingIndexId>
+    </key>
+    <key id="319" parent="281" name="students_phone_key3">
+      <ObjectId>178002</ObjectId>
+      <StateNumber>2781893</StateNumber>
+      <UnderlyingIndexId>178001</UnderlyingIndexId>
+    </key>
+    <key id="320" parent="281" name="students_phone_key4">
+      <ObjectId>178006</ObjectId>
+      <StateNumber>2781895</StateNumber>
+      <UnderlyingIndexId>178005</UnderlyingIndexId>
+    </key>
+    <key id="321" parent="281" name="students_email_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177977</ObjectId>
+      <StateNumber>2781840</StateNumber>
+      <UnderlyingIndexId>177976</UnderlyingIndexId>
+    </key>
+    <key id="322" parent="281" name="students_email_key1">
+      <ObjectId>177996</ObjectId>
+      <StateNumber>2781889</StateNumber>
+      <UnderlyingIndexId>177995</UnderlyingIndexId>
+    </key>
+    <key id="323" parent="281" name="students_email_key2">
+      <ObjectId>178000</ObjectId>
+      <StateNumber>2781891</StateNumber>
+      <UnderlyingIndexId>177999</UnderlyingIndexId>
+    </key>
+    <key id="324" parent="281" name="students_email_key3">
+      <ObjectId>178004</ObjectId>
+      <StateNumber>2781893</StateNumber>
+      <UnderlyingIndexId>178003</UnderlyingIndexId>
+    </key>
+    <key id="325" parent="281" name="students_email_key4">
+      <ObjectId>178008</ObjectId>
+      <StateNumber>2781895</StateNumber>
+      <UnderlyingIndexId>178007</UnderlyingIndexId>
+    </key>
+    <check id="326" parent="282" name="teachers_date_of_birth_check">
+      <ColNames>date_of_birth</ColNames>
+      <ObjectId>177989</ObjectId>
+      <Predicate>((date_part(&apos;year&apos;::text, now()) - date_part(&apos;year&apos;::text, date_of_birth)) &gt;= (16)::double precision) AND (date_part(&apos;year&apos;::text, date_of_birth) &gt;= (1900)::double precision)</Predicate>
+      <StateNumber>2781871</StateNumber>
+    </check>
+    <check id="327" parent="282" name="teachers_date_of_birth_check1">
+      <ColNames>date_of_birth</ColNames>
+      <ObjectId>177990</ObjectId>
+      <Predicate>((date_part(&apos;year&apos;::text, now()) - date_part(&apos;year&apos;::text, date_of_birth)) &gt;= (16)::double precision) AND (date_part(&apos;year&apos;::text, date_of_birth) &gt;= (1900)::double precision)</Predicate>
+      <StateNumber>2781873</StateNumber>
+    </check>
+    <check id="328" parent="282" name="teachers_check">
+      <ColNames>date_of_birth
+full_name</ColNames>
+      <ObjectId>177991</ObjectId>
+      <Predicate>((date_part(&apos;year&apos;::text, now()) - date_part(&apos;year&apos;::text, date_of_birth)) &gt;= (16)::double precision) AND (date_part(&apos;year&apos;::text, date_of_birth) &gt;= (1900)::double precision) AND ((full_name)::text = &apos;Siyovush&apos;::text)</Predicate>
+      <StateNumber>2781875</StateNumber>
+    </check>
+    <check id="329" parent="282" name="teachers_check1">
+      <ColNames>date_of_birth
+full_name</ColNames>
+      <ObjectId>177992</ObjectId>
+      <Predicate>((date_part(&apos;year&apos;::text, now()) - date_part(&apos;year&apos;::text, date_of_birth)) &gt;= (16)::double precision) AND (date_part(&apos;year&apos;::text, date_of_birth) &gt;= (1900)::double precision) AND ((full_name)::text = &apos;Siyovush&apos;::text)</Predicate>
+      <StateNumber>2781877</StateNumber>
+    </check>
+    <column id="330" parent="282" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;teachers_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5094,47 +5273,53 @@ true posixrules
       <SequenceId>177905</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="307" parent="282" name="full_name">
+    <column id="331" parent="282" name="full_name">
       <DasType>varchar(200)|0s</DasType>
       <Position>2</Position>
       <StateNumber>2781782</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="308" parent="282" name="phone">
+    <column id="332" parent="282" name="phone">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>2781782</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="309" parent="282" name="email">
+    <column id="333" parent="282" name="email">
       <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>NULL::character varying</DefaultExpression>
       <Position>4</Position>
       <StateNumber>2781782</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="310" parent="282" name="created_at">
+    <column id="334" parent="282" name="created_at">
       <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>now()</DefaultExpression>
       <Position>5</Position>
       <StateNumber>2781782</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="311" parent="282" name="updated_at">
+    <column id="335" parent="282" name="updated_at">
       <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>now()</DefaultExpression>
       <Position>6</Position>
       <StateNumber>2781782</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="312" parent="282" name="deleted_at">
+    <column id="336" parent="282" name="deleted_at">
       <DasType>timestamp with time zone|0s</DasType>
       <Position>7</Position>
       <StateNumber>2781782</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="313" parent="282" name="teachers_pkey">
+    <column id="337" parent="282" name="date_of_birth">
+      <DasType>date|0s</DasType>
+      <Position>8</Position>
+      <StateNumber>2781862</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="338" parent="282" name="teachers_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>177913</ObjectId>
@@ -5143,12 +5328,46 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="314" parent="282" name="teachers_pkey">
+    <index id="339" parent="282" name="teachers_phone_key">
+      <ColNames>phone</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177980</ObjectId>
+      <StateNumber>2781845</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <index id="340" parent="282" name="teachers_email_key">
+      <ColNames>email</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177982</ObjectId>
+      <StateNumber>2781845</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="341" parent="282" name="teachers_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>177914</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2781782</StateNumber>
       <UnderlyingIndexId>177913</UnderlyingIndexId>
+    </key>
+    <key id="342" parent="282" name="teachers_phone_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177981</ObjectId>
+      <StateNumber>2781845</StateNumber>
+      <UnderlyingIndexId>177980</UnderlyingIndexId>
+    </key>
+    <key id="343" parent="282" name="teachers_email_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>177983</ObjectId>
+      <StateNumber>2781845</StateNumber>
+      <UnderlyingIndexId>177982</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

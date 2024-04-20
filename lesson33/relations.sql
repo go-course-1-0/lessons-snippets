@@ -32,7 +32,7 @@ create table courses
     updated_at timestamptz default now(),
     deleted_at timestamptz default null,
 
-    constraint courses_teacher_id_fk
+    constraint courses_teacher_id_fkey
         foreign key (teacher_id)
             REFERENCES teachers (id)
 );
