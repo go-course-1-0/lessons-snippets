@@ -5,8 +5,21 @@ import "fmt"
 func main() {
 	var pi = 3
 	var a = 10
+	fmt.Println(a)
+	fmt.Printf("%v - %T\n", a, a)
 
 	var pA = &a
+	fmt.Printf("%v - %T\n", pA, pA)
+	fmt.Println(pA)
+	fmt.Println(*pA)
+	fmt.Println(a + *pA)
+	a = 12
+	fmt.Println(a)
+
+	*pA = 15
+	fmt.Println(pA)
+	fmt.Println(a)
+
 	var pPi = &pi
 
 	fmt.Println(pA, pPi)
