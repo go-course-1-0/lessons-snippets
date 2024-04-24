@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40f73a44-06e4-45af-8c23-e3bf625d688d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ad9d350d-28bd-4265-995d-d2f6b46e1b76.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ad9d350d-28bd-4265-995d-d2f6b46e1b76.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3199c514-dea3-49be-ba03-1c25b778e42f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3199c514-dea3-49be-ba03-1c25b778e42f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3199c514-dea3-49be-ba03-1c25b778e42f/storage_v2/_src_/database/dvdrental_db.p184mA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3199c514-dea3-49be-ba03-1c25b778e42f/storage_v2/_src_/database/dvdrental_db.p184mA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson14/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/lesson14/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
