@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40f73a44-06e4-45af-8c23-e3bf625d688d" name="Changes" comment="" />
+    <list default="true" id="40f73a44-06e4-45af-8c23-e3bf625d688d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/cmd/api/fastHttpRouter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/cmd/api/ginRouter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/cmd/api/gorillaRouter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/cmd/api/httprouter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/cmd/api/multipleRouters.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/cmd/api/netHttpRouter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/cmd/console/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/academy_db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/database.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/models/admin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/models/course.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/models/group.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/models/lesson.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/models/student.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/database/models/teacher.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/examples/dynamicQueries.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson41/apiAcademy/internal/examples/rawSQLQueries.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +71,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/rmdn/go/src/itrun-lectures/lesson38",
+    "last_opened_file_path": "/home/rmdn/go/src/itrun-lectures",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "settings.editor.selected.configurable": "preferences.editor"
@@ -64,11 +87,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lesson41" />
       <recent name="$PROJECT_DIR$/lesson38" />
       <recent name="$PROJECT_DIR$/lesson37" />
       <recent name="$PROJECT_DIR$/lesson36" />
       <recent name="$PROJECT_DIR$/lesson29" />
-      <recent name="$PROJECT_DIR$/lesson26" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lesson27-28" />
