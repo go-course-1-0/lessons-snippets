@@ -48,7 +48,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/rmdn/go/src/itrun-lectures/lesson46",
+    "last_opened_file_path": "/home/rmdn/go/src/itrun-lectures/lesson46-part2",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "settings.editor.selected.configurable": "preferences.editor"
@@ -64,11 +64,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lesson46-part2" />
       <recent name="$PROJECT_DIR$/lesson46" />
       <recent name="$PROJECT_DIR$/lesson44-45" />
       <recent name="$PROJECT_DIR$/lesson41" />
       <recent name="$PROJECT_DIR$/lesson38" />
-      <recent name="$PROJECT_DIR$/lesson37" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lesson27-28" />
